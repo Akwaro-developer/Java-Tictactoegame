@@ -13,13 +13,7 @@ public class ArtificialPlayer extends Player {
         do {
             row = random.nextInt(size);
             col = random.nextInt(size);
-        } while (!board[row * size + col].getRepresentation().equals("|   "));
-        System.out.println("AI chooses: " + row + " " + col);
+        } while (!board[row * size + col].isOccupied());
         return new int[]{row, col};
-    }
-
-    @Override
-    public int[] getMove(TicTacToe game) {
-        return new int[0];
     }
 }
